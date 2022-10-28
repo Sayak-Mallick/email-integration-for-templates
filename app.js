@@ -46,6 +46,7 @@ app.get('/send-email', (req, res) => {
                             return console.log(error);
                         }
                         console.log('Message Sent: %s', info.messageId);
+                        //alert("Message Sent: %s", info.messageId);
                     });
                 }
             });
@@ -63,6 +64,6 @@ app.get('/send-email', (req, res) => {
     // res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(4008, () => {
-    console.log('The server is running on port http://localhost:4008/send-email');
+app.listen(4007, () => {
+    console.log('The server is running on port http://localhost:4007/send-email');
 });
