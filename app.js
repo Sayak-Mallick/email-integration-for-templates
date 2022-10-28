@@ -15,7 +15,6 @@ const transport = nodemailer.createTransport({
 
 
 app.get('/', (req, res) => {
-
     res.sendFile(__dirname + '/index.html');
 });
 
@@ -34,12 +33,11 @@ app.get('/send-email', (req, res) => {
                 else {
                     let email1 = req.query.email1;
                     let subject = req.query.subject;
-                    // let message = req.query.message;
 
                     var mailOptions = {
                         from: 'sayakmallickkv@gmail.com',
                         to: email1,
-                        subject: "Happy Halloween 2022",
+                        subject: subject,
                         html: data
                     };
 
@@ -54,11 +52,11 @@ app.get('/send-email', (req, res) => {
     };
 
     let email1 = req.query.email1;
-    let email2 = req.query.email2;
+    let subject = req.query.subject;
 
     sendEmail(
-         email1,
-        "Happy Halloween 2022",
+        email1,
+        "Happy Halloween",
         "Novac Technology Solutions wishes you and your family a very happy halloween. Hope your day is full of good times and good treats."
     );
     res.sendFile(__dirname + '/index.html');
